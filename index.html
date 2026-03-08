@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Tracker</h1>
+        </header>
+
+        <section class="add-book-section">
+            <form id="add-book-form">
+                <input type="text" id="book-title" placeholder="Enter book title" required>
+                <select id="book-category">
+                    <option value="Tech">Tech</option>
+                    <option value="Non-Tech">Non-Tech</option>
+                </select>
+                <select id="book-status">
+                    <option value="To Read">To Read</option>
+                    <option value="Already Read">Already Read</option>
+                </select>
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="to-read-tab">To Read</button>
+                <button class="tab-btn" data-tab="already-read-tab">Already Read</button>
+            </div>
+
+            <div id="to-read-tab" class="tab-content active">
+                <div class="category-section">
+                    <h2>Tech Books</h2>
+                    <ul id="to-read-tech-list" class="book-list"></ul>
+                </div>
+                <div class="category-section">
+                    <h2>Non-Tech Books</h2>
+                    <ul id="to-read-non-tech-list" class="book-list"></ul>
+                </div>
+            </div>
+
+            <div id="already-read-tab" class="tab-content">
+                <div class="category-section">
+                    <h2>Tech Books</h2>
+                    <ul id="already-read-tech-list" class="book-list"></ul>
+                </div>
+                <div class="category-section">
+                    <h2>Non-Tech Books</h2>
+                    <ul id="already-read-non-tech-list" class="book-list"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Load Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
